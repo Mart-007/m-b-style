@@ -1,6 +1,6 @@
 {
   "name": "m-b-style",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CSS shorthand utility classes like mb-f-tc-jc-g2",
   "main": "dist/m-b-style.css",
   "type": "module",
