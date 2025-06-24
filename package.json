@@ -1,0 +1,21 @@
+{
+  "name": "m-b-style",
+  "version": "1.0.3",
+  "description": "CSS shorthand utility classes like mb-f-tc-jc-g2",
+  "main": "dist/m-b-style.css",
+  "type": "module",
+  "scripts": {
+    "build": "node generator/generate.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "css",
+    "utility",
+    "shorthand",
+    "less",
+    "react",
+    "mb-style"
+  ],
+  "author": "Reymart Bordo",
+  "license": "MIT"
+}
