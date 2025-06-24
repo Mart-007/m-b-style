@@ -4,6 +4,14 @@
   "description": "CSS shorthand utility classes like mb-f-tc-jc-g2",
   "main": "dist/m-b-style.css",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mart-007/m-b-style.git"
+  },
+  "homepage": "https://github.com/Mart-007/m-b-style#readme",
+  "bugs": {
+    "url": "https://github.com/Mart-007/m-b-style/issues"
+  },
   "scripts": {
     "build": "node generator/generate.js",
     "prepublishOnly": "npm run build"
