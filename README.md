@@ -16,17 +16,17 @@ First, import the CSS file in your project:
 
 ### React
 ```js
-import 'm-b-style/dist/m-b-style.css';
+import 'm-b-style';
 ```
 
 ### HTML
 ```html
-<link rel="stylesheet" href="./node_modules/m-b-style/dist/m-b-style.css" />
+<link rel="stylesheet" href="../dist/index.css" />
 ```
 
 ### LESS/SCSS
 ```less
-@import 'm-b-style/dist/m-b-style.css';
+@import '../index.css';
 ```
 
 ## 🚀 Usage
@@ -36,13 +36,13 @@ Once you've imported the CSS, you can use the utility classes:
 ### React
 ```js
 export default function App() {
-  return <div className="mb-f-jc-aic-g4">Hello</div>;
+  return <div className="mb-f-jc-g4">Hello</div>;
 }
 ```
 
 ### HTML
 ```html
-<div class="mb-f-jc-aic-g4">Hello</div>
+<div class="mb-f-jc-g4">Hello</div>
 ```
 
 ### LESS/SCSS
@@ -63,7 +63,7 @@ export default function App() {
 | `jfs`     | Justify flex-start | `justify-content: flex-start;` |
 | `jfe`     | Justify flex-end   | `justify-content: flex-end;`   |
 | `aic`     | Align items center | `align-items: center;`         |
-| `g2`      | Gap 2px            | `gap: 2px;`                    |
-| `g4`      | Gap 4px            | `gap: 4px;`                    |
-| `g8`      | Gap 8px            | `gap: 8px;`                    |
-| `g16`     | Gap 16px           | `gap: 16px;`                   |
+| `g0`      | Gap 2px            | `gap: 0rem;`                    |
+| `g1`      | Gap 4px            | `gap: 0.25rem;`                    |
+| `g2`      | Gap 8px            | `gap: 0.5rem;`                    |
+| `g3`     | Gap 16px           | `gap: 0.25rem;`                   |

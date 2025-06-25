@@ -11,3 +11,6 @@ pub:
 
 link:
 	npm link
+
+pkg-link:
+	npm link m-b-style
