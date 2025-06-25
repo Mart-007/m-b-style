@@ -8,3 +8,6 @@ ptf:
 
 pub:
 	npm publish
+
+link:
+	npm link

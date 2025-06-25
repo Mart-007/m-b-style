@@ -2,7 +2,12 @@
   "name": "m-b-style",
   "version": "1.0.4",
   "description": "CSS shorthand utility classes like mb-f-tc-jc-g2",
-  "main": "dist/m-b-style.css",
+  "style": "dist/index.css",
+  "files": [
+    "dist",
+    "generator",
+    "README.md"
+  ],
   "type": "module",
   "repository": {
     "type": "git",
@@ -24,6 +29,6 @@
     "react",
     "mb-style"
   ],
-  "author": "Reymart Bordo",
+  "author": "Mart Bordo",
   "license": "MIT"
 }

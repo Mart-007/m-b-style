@@ -1,41 +1,40 @@
 import { fileURLToPath } from "url";
 import fs from "fs";
 import path from "path";
+import { baseFlex } from "../utils/short-hand-styles/flex.js";
+import Combination from "../utils/combinations/combination.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const shortHandStyles = {
-  f: "display: flex;",
-  tc: "text-align: center;",
-  jc: "justify-content: center;",
-  g2: "gap: 2px;",
-  g4: "gap: 4px;",
-  g8: "gap: 8px;",
-  g16: "gap: 16px;",
-  aic: "align-items: center;",
-  jfs: "justify-content: flex-start;",
-  jfe: "justify-content: flex-end;",
-  c: "display: contents;",
+  ...baseFlex,
 };
 
-const generateCombinations = (keys) => {
-  const result = [];
-
-  const combine = (prefix, start) => {
-    if (prefix.length > 0) result.push([...prefix]);
-    for (let i = start; i < keys.length; i++) {
-      combine([...prefix, keys[i]], i + 1);
-    }
-  };
-
-  combine([], 0);
-  return result;
-};
-
-const buildCSS = () => {
+const buildCSS = (strategy = "all") => {
   const keys = Object.keys(shortHandStyles);
-  const combos = generateCombinations(keys);
+
+  let combos;
+
+  const combination = new Combination(keys, 3);
+
+  switch (strategy) {
+    case "all":
+      combos = combination.all();
+      break;
+    case "limited":
+      combos = combination.limited();
+      break;
+    case "batch":
+      combos = combination.batch();
+      break;
+    case "common":
+      combos = combination.common();
+      break;
+    default:
+      return "Unknown Strategy";
+  }
+
   const css = combos
     .map((parts) => {
       const className = `.mb-${parts.join("-")}`;
@@ -46,8 +45,11 @@ const buildCSS = () => {
 
   const outputDir = path.resolve(__dirname, "../dist");
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir);
-  fs.writeFileSync(path.join(outputDir, "m-b-style.css"), css);
+
+  fs.writeFileSync(path.join(outputDir, "index.css"), css);
+
   console.log("✅ m-b-style.css generated in /dist");
+  console.log(`CSS file size: ${(css.length / 1024).toFixed(2)} KB`);
 };
 
 buildCSS();
